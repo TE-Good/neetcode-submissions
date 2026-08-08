@@ -1,0 +1,13 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hash_map = {}
+
+        for curr_index, num in enumerate(nums):
+            diff = target - num
+
+            if diff in hash_map:
+                return [hash_map[diff], curr_index]
+
+            hash_map[num] = curr_index
+
+        return [0, 0]
